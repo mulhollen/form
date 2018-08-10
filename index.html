@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<head>
+<link rel='dns-prefetch' href='http://cdnjs.cloudflare.com' />
+<link rel='dns-prefetch' href='http://s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Identity Group &raquo; Feed" href="https://www.identitygroup.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Identity Group &raquo; Comments Feed" href="https://www.identitygroup.com/comments/feed/" />
+<link rel='stylesheet' id='fullpage-css'  href='https://www.identitygroup.com/wp-content/themes/idgroup/js/fullpage/jquery.fullpage.min.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='main-css'  href='https://www.identitygroup.com/wp-content/themes/idgroup/css/theme.min.css?ver=1.0' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.identitygroup.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://www.identitygroup.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://www.identitygroup.com/wp-content/plugins/pixelyoursite/js/public.js?ver=5.3.1'></script>
+<script type='text/javascript' src='https://www.identitygroup.com/wp-content/themes/idgroup/js/fontawesome-all.min.js?ver=1.0'></script>
+<script type='text/javascript' src='https://www.identitygroup.com/wp-content/themes/idgroup/js/popper.min.js?ver=1'></script>
+<link rel="stylesheet" href="https://use.typekit.net/vwk6lda.css">
+<link rel='https://api.w.org/' href='https://www.identitygroup.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.identitygroup.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.identitygroup.com/wp-includes/wlwmanifest.xml" /> 
+
+<link rel='shortlink' href='https://www.identitygroup.com/?p=27' />
+<link rel="alternate" type="application/json+oembed" href="https://www.identitygroup.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.identitygroup.com%2Fcontact-us%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.identitygroup.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.identitygroup.com%2Fcontact-us%2F&#038;format=xml" />
+    <style type="text/css">
+        .form {
+            width: 540px;
+            box-shadow: 0 2px 15px 4px rgba(0, 52, 104, 0.1);
+        }
+        
+        .field {
+            word-wrap: normal;
+            border: none;
+            border-bottom: 2px solid #d8d8d8;
+            background-color: #FFFFFF;
+            font-size: 20px;
+            font-weight: normal;
+            color: #003b86 !important;
+        }
+        
+        .field::placeholder {
+            color: #003468 !important;
+            font-size: 20px;
+            font-family: 'myriad-pro', sans-serif;
+            font-weight: 300;
+        }
+        
+        .fieldFilled {
+            border: none;
+            border-bottom: 2px solid #003468;
+            background-color: #FFFFFF;
+            font-size: 20px;
+            font-weight: normal;
+            color: #003b86 !important;
+        }
+        
+        .fieldAlert {
+            border: none;
+            border-bottom: 2px solid #f8971d;
+            background-color: #FFFFFF;
+            font-size: 20px;
+            font-weight: normal;
+            color: #f8971d !important;
+        }
+        
+        .fieldAlert::placeholder {
+            color: #f8971d !important;
+            font-size: 20px;
+            font-family: 'myriad-pro', sans-serif;
+        }
+        
+        input:focus,
+        input:active,
+        .field:focus {
+            outline: none;
+            border-bottom: 2px solid #f8971d;
+        }
+        
+        input:vaild {
+            border-bottom: 2px solid #003468;
+        }
+        
+        #alert {
+            width: 540px;
+            height: 50px;
+            font-size: 20px;
+            font-family: 'myriad-pro', sans-serif;
+            font-weight: lighter;
+            color: #FFFFFF;
+            border: none;
+            background-color: #f8971d;
+            border-radius: 0;
+        }
+        
+        .button {
+            width: 540px;
+            height: 50px;
+            font-size: 24px;
+            font-family: 'myriad-pro', sans-serif;
+            font-weight: lighter;
+            color: #FFFFFF;
+            border: none;
+            background-color: #003468;
+            box-shadow: 0 2px 15px 0 rgba(0, 52, 104, 0.1);
+        }
+
+        .message {
+            z-index: 1;
+            height: 135px;
+            margin: 1rem 0 1rem 0;
+        }
+        
+        /*dropdowns*/
+       
+        .select {
+	        width: 100%;
+	        height: 40px;
+	        cursor: pointer;
+	        background-color: #ffffff;
+            margin: 1rem 0 1rem 0;
+        }
+        
+        .select_expand {
+		    width: 0;
+		    height: 40px;
+		    position: absolute;
+		    top: 0;
+		    right: 0;
+	    }
+        
+        .select_expand::after {
+			content: '\003E';
+			position: absolute;
+			top: 50%;
+			right: 4px;
+			-webkit-transform: translate(-50%, -50%) rotate(90deg) scaleY(1.75);
+			transform: translate(-50%, -50%) rotate(90deg) scaleY(1.75);
+			color: #003c8d;
+			font-size: 20px;
+			pointer-events: none;
+			z-index: 2;
+			transition: all 250ms cubic-bezier(.4,.25,.3,1);
+		}
+
+        .select_expand:checked::after {
+            -webkit-transform: translate(-50%, -50%) rotate(90deg) scaleX(-1) scaleY(1.75);
+            transform: translate(-50%, -50%) rotate(90deg) scaleX(-1) scaleY(1.75);
+        }
+
+        .select_expandLabel {
+		    display: block;
+		    width: 100%;
+		    height: 40px;
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    cursor: pointer;
+		    border-bottom: 2px solid #d8d8d8;
+	    }
+
+        .select_close {
+            display: none;
+        }
+        
+        .select_closeLabel {
+		    width: 100vw;
+		    height: 100vh;
+		    position: fixed;
+		    top: 0;
+		    left: 0;
+		    display: none;
+	    }
+        
+        .select_items {
+		    width: 100%;
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    border-radius: 0px;
+		    padding-top: 40px;
+	    }
+
+        .select_input {
+            display: none;
+        }
+
+        .select_label {
+		    transition: all 250ms cubic-bezier(.4,.25,.3,1);
+		    display: block;
+		    height: 0;
+		    font-size: 20px;
+		    line-height: 40px;
+		    overflow: hidden;
+		    color: #003c8d;
+		    background-color: #fff;
+		    cursor: pointer;
+		    margin-bottom: 0;
+	    }
+
+        .select_label-placeholder {
+			height: 40px;
+			vertical-align: middle;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: transparent;
+		}
+        
+        .select_expand:checked + .select_closeLabel {
+			display: block;
+		}
+
+        .select_expand:checked + .select_closeLabel + .select_options .select_label {
+			height: 40px;
+			box-shadow: 0 4px 10px 1px rgba(0, 52, 104, 0.2);
+		    z-index: 99;
+		}
+
+        .select_expand:checked + .select_closeLabel + .select_options .select_label:hover {
+            background-color: #f7f7f7;
+        }
+
+        .select_expand:checked + .select_closeLabel + .select_options + .select_expandLabel {
+            display: none;
+        }
+
+        .select_input:checked + .select_label {
+		    height: 40px;
+		    margin-top: -40px;
+	    }
+        /*end dropdowns*/
+        
+        #submit:focus {
+            outline: none;
+            
+        }
+        
+        
+/* global */
+	* {
+		position: relative;
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border-color: inherit;
+	}
+
+	ul,
+	ol,
+	menu {
+		list-style: none;
+	}
+
+	button,
+	input,
+	optgroup,
+	select,
+	textarea {
+		outline: none;
+		border: none;
+		border-radius: 0;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+	}
+	
+	button,
+	select {
+  	text-transform: none;
+  	cursor: pointer;
+	}
+
+	button[disabled],
+	html input[disabled] {
+  	cursor: default;
+	}
+/* end global */
+
+/* moblie */
+    .single_double {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        padding: 1rem 0 1rem 0;
+    }
+
+    .single_double_firstItem {
+        margin-right: 1rem;
+    }
+
+    .single {
+        margin: 1rem 0 1rem 0;
+    }
+
+    @media only screen and (max-width: 600px) {
+        /* single column */
+        .single_double {
+            display: flex;
+            flex-direction: column;
+            padding: 0 0 1rem 0;
+        }
+
+        .single_double_firstItem {
+            margin-right: 0;
+            margin-bottom: 1rem;
+        }
+
+        .single {
+            margin: 0 0 1rem 0;
+        }
+
+        .form {
+            width: 304px;
+            box-shadow: 0 2px 15px 4px rgba(0, 52, 104, 0.1);
+        }
+        
+        #submit {
+            width: 304px;
+        }
+        
+        .select {
+            margin: 0 0 1rem 0;
+        }
+        
+        .message {
+            margin: 0 0 1rem 0;
+        }
+    }
+
+    .dropdownFilled {
+        border-bottom: 2px solid #003b8a;
+        font-weight: normal;
+    }
+
+    .dropdownAlert {
+        border-bottom: 2px solid #f8971d;
+        font-weight: normal;
+    }
+
+    .dropdownAlertText {
+        color: #f8971d;
+    }
+    
+    </style>  
+
+
+
+</head>
+<body class="page-template page-template-page-templates page-template-contact page-template-page-templatescontact-php page page-id-27 group-blog">
+     <!-- JS -->
+     <script>
+      // change input styling on change
+            function checkFilled(item) {
+                    
+                if(item == "firstName") {
+                    
+                    if(!document.getElementById("firstName").value) {
+                        alertFunction("firstName"); 
+                    } else {
+                        resetAlert("firstName");
+                    }
+
+                } else if (item == "lastName"){
+    
+                    if(!document.getElementById("lastName").value){
+                        alertFunction("lastName");
+                    } else {
+                        resetAlert("lastName");
+                    }
+
+                } else if (item == "business") {
+                
+                    if(!document.getElementById("business").value){
+                        alertFunction("business");
+                    } else {
+                        resetAlert("business");
+                    }
+                
+                } else if (item == "message") {
+                
+                    if(!document.getElementById("message").value){
+                        alertFunction("message");
+                    } else {
+                        resetAlert("message");
+                    }
+                } else if (item == "email"){
+                
+                    // test for vaild emails
+                    if(document.getElementById("email").value == '' || document.getElementById("email").value.indexOf('@') == -1 || document.getElementById("email").value.indexOf('.') == -1) {
+                        alertFunction("email");
+                    } else {
+                        resetAlert("email"); 
+                    }
+                } else if (item == "phone") {
+                
+                    // test for vaid phone numbers
+                    var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+                    if(document.getElementById("phone").value.match(phoneno)){
+                        resetAlert("phone");   
+                    } else {
+                        alertFunction("phone");
+                    }
+                } else if (item == "zip") {
+                
+                    // test for valid Canadian and US zipcodes
+                    if(/^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/.test(document.getElementById("zip").value)) {
+                        resetAlert("zip");  
+                    } else if(/^([0-9]{5})(?:[-\s]*([0-9]{4}))?$/.test(document.getElementById("zip").value)) {
+                        resetAlert("zip");
+                    } else {
+                        console.log("this is NOT a vaild zipcode");
+                        alertFunction("zip");   
+                    }
+                }
+                    
+
+                function alertFunction(id){
+                    document.getElementById(`${id}`).classList.remove('field');
+                    document.getElementById(`${id}`).classList.remove('fieldFilled');
+                    document.getElementById(`${id}`).classList.add('fieldAlert');
+                }
+
+                function resetAlert(id){
+                    document.getElementById(`${id}`).classList.remove('fieldAlert');
+                    document.getElementById(`${id}`).classList.add('fieldFilled');
+                    document.getElementById(`${id}`).classList.remove('field');
+                }
+           
+            // end function checked filled   
+            }
+
+            function dropdownCheckFilled(dropdown, item) {
+                if(dropdown == "interest") {
+                    // clear the classes
+                    removeDropdownClasses("interest");
+                    // add appropriate class to the chosen item
+                    if(item == "interest-signs" || item == "interest-visualDecor" || item == "interest-officeProducts"){
+                        document.getElementById("selectInterest").classList.add("dropdownFilled");
+                        document.getElementsByClassName(`${item}`)[0].classList.add("dropdownFilled");
+                        
+                    } 
+                } else if(dropdown == "industry"){
+                    // clear the classes
+                    removeDropdownClasses("industry");
+                    // add appropriate class to the chosen item
+                    if(item == "industry-signs" || item == "industry-visualDecor" || item == "industry-officeProducts"){
+                        document.getElementById("selectIndustry").classList.add("dropdownFilled");
+                        document.getElementsByClassName(`${item}`)[0].classList.add("dropdownFilled");
+                        
+                    } 
+                }
+
+                function removeDropdownClasses(type){
+                    if(type == "interest") {
+                        document.getElementById("selectInterest").classList.remove("dropdownFilled");
+                        document.getElementById("selectInterest").classList.remove("dropdownAlert");
+                        document.getElementById("selectInterest").classList.remove("dropdownAlertText");
+                        document.getElementsByClassName("interest-signs")[0].classList.remove("dropdownFilled");
+                        document.getElementsByClassName("interest-visualDecor")[0].classList.remove("dropdownFilled");
+                        document.getElementsByClassName("interest-officeProducts")[0].classList.remove("dropdownFilled");
+                    } else if (type == "industry") {
+                        document.getElementById("selectIndustry").classList.remove("dropdownFilled");
+                        document.getElementById("selectIndustry").classList.remove("dropdownAlert");
+                        document.getElementById("selectIndustry").classList.remove("dropdownAlertText");
+                        document.getElementsByClassName("industry-signs")[0].classList.remove("dropdownFilled");
+                        document.getElementsByClassName("industry-visualDecor")[0].classList.remove("dropdownFilled");
+                        document.getElementsByClassName("industry-officeProducts")[0].classList.remove("dropdownFilled");
+                    }
+                }
+            }
+
+            function submit() {
+            
+            var dropdowncheck = document.getElementsByClassName("dropdownFilled");
+
+            if(dropdowncheck.length < 4 || !dropdowncheck.length) {
+                if(dropdowncheck[1] === undefined) {
+
+                    document.getElementById("changeIndustry").classList.add("dropdownAlertText");
+                    document.getElementById("selectIndustry").classList.add("dropdownAlert");
+                    document.getElementById("changeInterest").classList.add("dropdownAlertText");
+                    document.getElementById("selectInterest").classList.add("dropdownAlert");
+                    document.getElementById("alert").classList.remove('invisible');
+
+                } else if(dropdowncheck[1].id == "selectIndustry"){
+                                    
+                    document.getElementById("alert").classList.remove('invisible');
+                    document.getElementById("selectInterest").classList.add("dropdownAlert");
+                    document.getElementById("changeInterest").classList.add("dropdownAlertText");
+
+                } else if(dropdowncheck[1].id == "selectInterest") {
+                                       
+                    document.getElementById("alert").classList.remove('invisible');
+                    document.getElementById("selectIndustry").classList.add("dropdownAlert");
+                    document.getElementById("changeIndustry").classList.add("dropdownAlertText");
+                }
+            }
+            
+            
+            var inputVal = document.getElementsByClassName("fieldFilled");
+
+            if(inputVal.length < 7) {
+                document.getElementById("alert").classList.remove('invisible');
+                
+                var showField = document.getElementsByClassName("field");
+                console.log("show field", showField);
+                // choose your interest should be orange
+
+                for(i = 0; i < 7; i++){
+                    console.log("show field", showField[i]);
+                    showField[i].classList.add("fieldAlert");
+                }
+
+            } else {
+                document.getElementById("alert").classList.add('invisible');
+            }
+
+            }
+
+     </script>
+     
+     %%content%%
+    <div class="form"> 
+        <!--contact info-->
+        <div class="d-flex flex-column mx-5 pt-5">
+            <!--name div-->
+            <div class="single_double">
+                <input id="firstName" class="field text-light single_double_firstItem" placeholder="First Name" onchange="checkFilled(`firstName`);">
+                <input id="lastName" class="field text-light" placeholder="Last Name" onchange="checkFilled(`lastName`);">
+            </div>
+            <!--business-->
+            <input id="business" class="field text-light single" placeholder="Business" onchange="checkFilled(`business`);">
+            <!--email-->
+            <input id="email" class="field text-light single" placeholder="E-mail" onchange="checkFilled(`email`);">
+            <!--phone and zip-->
+            <div class="single_double">
+                <input id="phone" class="field text-light single_double_firstItem" placeholder="Phone" onchange="checkFilled(`phone`);">
+                <input id="zip" class="field text-light" placeholder="Zipcode" onchange="checkFilled(`zip`);">
+            </div>
+            <!--dropdowns-->
+            <form>
+	            <ul class="select">
+                    <li>
+                        <input class="select_close" type="radio" name="interest" id="interest-close" value="" onchange="dropdownCheckFilled(`interest`, `interest-empty`);"/>
+                        <span class="select_label select_label-placeholder" id="changeInterest">Choose your interest</span>
+                    </li>
+                    <li class="select_items">
+                        <input class="select_expand" type="radio" name="interest" id="interest-opener"/>
+                        <label class="select_closeLabel" for="interest-close"></label>
+                        <ul class="select_options">
+                            <li class="select_option">
+                                <input class="select_input" type="radio" name="interest" id="interest-signs" onchange="dropdownCheckFilled(`interest`, `interest-signs`);"/>
+                                <label class="select_label interest-signs" for="interest-signs">Signs</label>
+                            </li>
+                            <li class="select_option">
+                                <input class="select_input" type="radio" name="interest" id="interest-visualDecor" onchange="dropdownCheckFilled(`interest`, `interest-visualDecor`);"/>
+                                <label class="select_label interest-visualDecor" for="interest-visualDecor">Visual Decor</label>
+                            </li>
+                            <li class="select_option">
+                                <input class="select_input" type="radio" name="interest" id="interest-officeProducts" onchange="dropdownCheckFilled(`interest`, `interest-officeProducts`);"/>
+                                <label class="select_label interest-officeProducts" for="interest-officeProducts">Office Products</label>
+                            </li>
+                        </ul>
+                        <label class="select_expandLabel" id="selectInterest" for="interest-opener"></label>
+                    </li>
+                </ul>
+            </form>
+            <form>
+	            <ul class="select">
+                    <li>
+                        <input class="select_close" type="radio" name="industry" id="industry-close" value="" onchange="dropdownCheckFilled(`industry`, `industry-empty`);"/>
+                        <span class="select_label select_label-placeholder" id="changeIndustry">Choose your industry</span>
+                    </li>
+                    <li class="select_items">
+                        <input class="select_expand" type="radio" name="industry" id="industry-opener"/>
+                        <label class="select_closeLabel" for="industry-close"></label>
+                        <ul class="select_options">
+                            <li class="select_option">
+                                <input class="select_input" type="radio" name="industry" id="industry-signs" onchange="dropdownCheckFilled(`industry`, `industry-signs`);"/>
+                                <label class="select_label industry-signs" for="industry-signs">Signs</label>
+                            </li>
+                            <li class="select_option">
+                                <input class="select_input" type="radio" name="industry" id="industry-visualDecor" onchange="dropdownCheckFilled(`industry`, `industry-visualDecor`);"/>
+                                <label class="select_label industry-visualDecor" for="industry-visualDecor">Visual Decor</label>
+                            </li>
+                            <li class="select_option">
+                                <input class="select_input" type="radio" name="industry" id="industry-officeProducts" onchange="dropdownCheckFilled(`industry`, `industry-officeProducts`);"/>
+                                <label class="select_label industry-officeProducts" for="industry-officeProducts">Office Products</label>
+                            </li>
+                        </ul>
+                        <label class="select_expandLabel" id="selectIndustry" for="industry-opener"></label>
+                    </li>
+                </ul>
+            </form>
+            
+        </div>
+        
+        <!--message and submit-->
+        <div class="d-flex flex-column justify-content-between">
+            <div class="pb-5 mx-5">
+                <textarea id="message" class="field w-100 message" type="text" placeholder="Message" onchange="checkFilled(`message`);"></textarea>
+            </div>
+            <div class="d-flex justify-content-end flex-column">
+                <div id="alert" class="d-flex align-items-center justify-content-center mb-0 pb-0 invisible">Please correct and fill in all of the fields</div>
+                <button id="submit" class="button mb-0 pb-0" onclick="submit();">Submit</button>
+            </div>
+        </div>
+    </div>
+    <script type='text/javascript' src='https://www.identitygroup.com/wp-content/themes/idgroup/js/theme.min.js?ver=1.0'></script>
+<script type='text/javascript' src='https://www.identitygroup.com/wp-content/themes/idgroup/js/fullpage/jquery.fullpage.extensions.min.js?ver=1.0'></script>
+<script type='text/javascript' src='https://www.identitygroup.com/wp-content/themes/idgroup/js/fullpage/fullpage.parallax.min.js?ver=1.0'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js?ver=1.0'></script>
+<script type='text/javascript' src='https://www.identitygroup.com/wp-content/themes/idgroup/js/gsap/TweenMax.min.js?ver=1.0'></script>
+<script type='text/javascript' src='https://www.identitygroup.com/wp-content/themes/idgroup/js/gsap/jquery.gsap.min.js?ver=1.0'></script>
+<script type='text/javascript' src='https://www.identitygroup.com/wp-content/themes/idgroup/js/gsap/TimelineMax.min.js?ver=1.0'></script>
+<script type='text/javascript' src='https://www.identitygroup.com/wp-content/themes/idgroup/js/gsap/utils/SplitText.min.js?ver=1.0'></script>
+<script type='text/javascript' src='https://www.identitygroup.com/wp-content/themes/idgroup/js/gsap/plugins/DrawSVGPlugin.min.js?ver=1.0'></script>
+<script type='text/javascript' src='https://www.identitygroup.com/wp-content/themes/idgroup/js/gsap/plugins/MorphSVGPlugin.min.js?ver=1.0'></script>
+<script type='text/javascript' src='https://www.identitygroup.com/wp-content/themes/idgroup/js/main.js?ver=1.0'></script>
+<script type='text/javascript' src='https://www.identitygroup.com/wp-content/themes/idgroup/js/contact.js?ver=1.0'></script>
+<script type='text/javascript' src='https://www.identitygroup.com/wp-includes/js/wp-embed.min.js?ver=12a48acb4518973416675c88a182855b'></script>
+</body>
+</html>
